@@ -7,3 +7,9 @@ test('renders learn react link', () => {
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders with test id', () => {
+  const { getByTestId } = render(<App />);
+  const linkElement = getByTestId("message");
+  expect(linkElement.textContent).toEqual("To test with cypress")
+});
